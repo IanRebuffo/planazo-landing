@@ -2,57 +2,65 @@
 
 /* ============================================================
    Planazo — Design tokens (Tailwind v4 @theme, CSS-first)
-   Marca: Lima #c8ff00 sobre dark. Tipografía: Plus Jakarta Sans.
-   Los tokens quedan disponibles como utilidades: bg-brand, text-fg, etc.
+   Marca REAL de la app (ver planazo/constants/theme.ts + foundation.html):
+   Verde menta #00c896 sobre crema #f7f5f0. Poppins + Nunito. Tema claro.
+   Tokens -> utilidades: bg-primary, text-fg, bg-card, border-line, etc.
    ============================================================ */
 @theme {
   /* Marca */
-  --color-brand: #c8ff00;
-  --color-brand-strong: #b2e600;
-  --color-on-brand: #0a0d02;
+  --color-primary: #00c896;
+  --color-primary-dark: #00a87e;
+  --color-primary-soft: #d1fae5;
+  --color-on-primary: #ffffff;
 
-  /* Superficies (dark-first) */
-  --color-bg: #0a0b0d;
-  --color-surface: #131519;
-  --color-surface-2: #1b1e24;
-  --color-elevated: #22262d;
+  /* Superficies (light, cálido) */
+  --color-bg: #f7f5f0;
+  --color-card: #ffffff;
+  --color-muted: #f1efe8;
 
   /* Texto */
-  --color-fg: #f4f5f6;
-  --color-fg-muted: #a4abb4;
-  --color-fg-subtle: #6b727c;
+  --color-fg: #1a1916;
+  --color-fg-sec: #5f5e5a;
+  --color-fg-muted: #b4b2a9;
 
-  /* Bordes / líneas */
-  --color-line: #262a31;
-  --color-line-strong: #343943;
-
-  /* Estados */
-  --color-danger: #ff5964;
-  --color-success: #4ade80;
+  /* Bordes / estados */
+  --color-line: #e8e5df;
+  --color-amber-bg: #fef3c7;
+  --color-amber: #b45309;
+  --color-danger: #ff3b30;
 
   /* Tipografía (se enlaza con next/font en layout.tsx) */
-  --font-sans: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
+  --font-soft: var(--font-nunito), ui-sans-serif, system-ui, sans-serif;
 
-  /* Radios */
-  --radius-sm: 8px;
+  /* Radios (redondeados, amigables como la app) */
+  --radius-sm: 12px;
   --radius-md: 14px;
-  --radius-lg: 22px;
-  --radius-xl: 32px;
+  --radius-lg: 16px;
+  --radius-xl: 22px;
+  --radius-2xl: 28px;
+
+  /* Sombras de marca */
+  --shadow-primary: 0 8px 20px rgba(0, 200, 150, 0.28);
+  --shadow-card: 0 4px 24px rgba(26, 25, 22, 0.06);
+  --shadow-lift: 0 18px 40px rgba(26, 25, 22, 0.12);
+
+  /* Easings (Emil Kowalski) */
+  --ease-out-quint: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-out-cubic: cubic-bezier(0.33, 1, 0.68, 1);
+  --ease-in-out-cubic: cubic-bezier(0.645, 0.045, 0.355, 1);
 
   /* Contenedor */
   --breakpoint-3xl: 120rem;
 }
 
 :root {
-  color-scheme: dark;
-}
-
-* {
-  border-color: var(--color-line);
+  color-scheme: light;
 }
 
 html {
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -63,10 +71,21 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-/* Selección con el lima de marca */
 ::selection {
-  background-color: var(--color-brand);
-  color: var(--color-on-brand);
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
+}
+
+/* Foco accesible de marca */
+:where(a, button, [tabindex]):focus-visible {
+  outline: 2px solid var(--color-primary-dark);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Tipografía auxiliar redondeada */
+.font-soft {
+  font-family: var(--font-soft);
 }
 
 @media (prefers-reduced-motion: reduce) {

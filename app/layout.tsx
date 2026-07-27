@@ -1,21 +1,28 @@
 import type { Metadata, Viewport } from "next";
-import { Plus_Jakarta_Sans } from "next/font/google";
+import { Poppins, Nunito } from "next/font/google";
 import "./globals.css";
 
-const jakarta = Plus_Jakarta_Sans({
+const poppins = Poppins({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-jakarta",
+  variable: "--font-poppins",
   weight: ["400", "500", "600", "700", "800"],
 });
 
+const nunito = Nunito({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-nunito",
+  weight: ["400", "500", "600", "700"],
+});
+
 export const metadata: Metadata = {
-  title: "Planazo — Descubrí qué hacer hoy",
+  title: "Planazo — Tu próximo plan empieza acá",
   description:
-    "Planazo es la app para descubrir eventos, salir con amigos y no perderte nada de lo que pasa cerca tuyo.",
+    "Descubrí eventos, salí con amigos y no te pierdas nada de lo que pasa cerca tuyo. Y si tenés un local: publicá eventos, vendé entradas, gestioná reservas y cobrá online.",
   metadataBase: new URL("https://planazoco.ar"),
   openGraph: {
-    title: "Planazo — Descubrí qué hacer hoy",
+    title: "Planazo — Tu próximo plan empieza acá",
     description:
       "Descubrí eventos, salí con amigos y no te pierdas nada de lo que pasa cerca tuyo.",
     type: "website",
@@ -24,7 +31,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#0a0b0d",
+  themeColor: "#00c896",
   width: "device-width",
   initialScale: 1,
 };
@@ -33,7 +40,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="es" className={jakarta.variable}>
+    <html lang="es" className={`${poppins.variable} ${nunito.variable}`}>
       <body className="min-h-dvh antialiased">{children}</body>
     </html>
   );

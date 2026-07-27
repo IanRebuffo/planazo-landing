@@ -10,6 +10,7 @@
     "deploy": "next build && wrangler pages deploy out --project-name=planazo-landing --branch=main"
   },
   "dependencies": {
+    "lucide-react": "^0.469.0",
     "motion": "^11.15.0",
     "next": "^15.1.6",
     "react": "^19.0.0",
