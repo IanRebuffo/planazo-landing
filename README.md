@@ -1,6 +1,10 @@
-# Planazo — Landing
+# Planazo — Landing (marketing)
 
-Landing page de marketing de **Planazo**. Carpeta hermana de `planazo` (app), `backend`, `admin-web` y `app-web`.
+Landing page de **marketing** de Planazo ("qué es, descargala"). Carpeta hermana de `planazo` (app), `backend`, `admin-web` y `applinks-web`.
+
+> **No confundir con [`../applinks-web`](../applinks-web)**, que es la landing *fallback de instalación* (deep links + assetlinks + "continuá con la app"). Esta (`landing-web`) es la web pública de marketing.
+>
+> **Plan de dominio (2026-07-26):** esta landing será el `/` de **planazo.app**. Como un dominio en Cloudflare Pages = un solo proyecto, al momento de deployar **este proyecto va a absorber** el fallback de `applinks-web` (assetlinks + middleware + subpaths `/evento`, `/local`, etc.) y `applinks-web` se retira.
 
 ## Stack
 
