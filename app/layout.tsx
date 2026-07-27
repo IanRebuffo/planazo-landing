@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   title: "Planazo — Descubrí qué hacer hoy",
   description:
     "Planazo es la app para descubrir eventos, salir con amigos y no perderte nada de lo que pasa cerca tuyo.",
-  metadataBase: new URL("https://planazo.app"),
+  metadataBase: new URL("https://planazoco.ar"),
   openGraph: {
     title: "Planazo — Descubrí qué hacer hoy",
     description:

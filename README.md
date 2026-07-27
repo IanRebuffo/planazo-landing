@@ -4,7 +4,11 @@ Landing page de **marketing** de Planazo ("qué es, descargala"). Carpeta herman
 
 > **No confundir con [`../applinks-web`](../applinks-web)**, que es la landing *fallback de instalación* (deep links + assetlinks + "continuá con la app"). Esta (`landing-web`) es la web pública de marketing.
 >
-> **Plan de dominio (2026-07-26):** esta landing será el `/` de **planazo.app**. Como un dominio en Cloudflare Pages = un solo proyecto, al momento de deployar **este proyecto va a absorber** el fallback de `applinks-web` (assetlinks + middleware + subpaths `/evento`, `/local`, etc.) y `applinks-web` se retira.
+> **Arquitectura de dominios (2026-07-26): separadas por subdominio.**
+> - `planazoco.ar` (raíz) → **esta** landing de marketing (proyecto Pages propio, a crear).
+> - `app.planazoco.ar` → `applinks-web` (proyecto Pages `planazo-app`, los deep links).
+>
+> Son hostnames distintos ⇒ dos proyectos Cloudflare Pages independientes, sin fusionar.
 
 ## Stack
 
