@@ -52,8 +52,18 @@ export function ForBusiness() {
   return (
     <section
       id="negocios"
-      className="relative overflow-hidden bg-[linear-gradient(160deg,#00b389_0%,#00a87e_45%,#008e6b_100%)] px-5 py-20 text-white sm:px-6 lg:py-28"
+      className="relative overflow-hidden bg-[linear-gradient(160deg,#00b389_0%,#00a87e_45%,#008e6b_100%)] px-5 pb-32 pt-32 text-white sm:px-6 lg:pb-40 lg:pt-40"
     >
+      {/* Fundidos suaves hacia la sección crema (arriba y abajo) */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-x-0 top-0 z-10 h-28 bg-[linear-gradient(to_bottom,var(--color-bg),transparent)]"
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-28 bg-[linear-gradient(to_top,var(--color-bg),transparent)]"
+      />
+
       {/* Estrella marca de agua */}
       <motion.div
         aria-hidden

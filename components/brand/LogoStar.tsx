@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useReducedMotion } from "motion/react";
+import { motion, useReducedMotion, type Variants } from "motion/react";
 
 // Paths EXACTOS del logo de Planazo (mismos que el splash de la app).
 const STAR_PATH =
@@ -10,15 +10,16 @@ const FACE_PATH =
 const VIEWBOX = "-60 -60 1210 1210";
 
 const EASE_BACK = [0.34, 1.56, 0.64, 1] as const;
+const CENTER = { transformOrigin: "center", transformBox: "fill-box" } as const;
 
 type Props = {
-  /** Color de la estrella */
   starColor?: string;
-  /** Color de la cara interior */
   faceColor?: string;
   className?: string;
   /** Entrada + flotación continua (para el hero). Si es false, estático. */
   animated?: boolean;
+  /** Reacción al hover: wiggle de la estrella + guiño de la cara. */
+  interactive?: boolean;
   /** Solo la estrella, sin la cara (para marcas de agua/fondos) */
   hideFace?: boolean;
 };
@@ -28,6 +29,7 @@ export function LogoStar({
   faceColor = "#00c896",
   className,
   animated = false,
+  interactive = false,
   hideFace = false,
 }: Props) {
   const reduce = useReducedMotion();
@@ -41,50 +43,60 @@ export function LogoStar({
     );
   }
 
+  const svgVariants: Variants = {
+    hidden: { scale: 0.6, rotate: -18, opacity: 0 },
+    show: {
+      scale: 1,
+      rotate: 0,
+      opacity: 1,
+      transition: { duration: 0.8, ease: EASE_BACK },
+    },
+    hover: {
+      scale: 1.06,
+      rotate: [0, -7, 7, -3, 0],
+      transition: { duration: 0.6, ease: "easeInOut" },
+    },
+  };
+
+  const faceVariants: Variants = {
+    hidden: { scale: 0, opacity: 0 },
+    show: {
+      scale: 1,
+      opacity: 1,
+      transition: { delay: 0.5, duration: 0.5, ease: EASE_BACK },
+    },
+    // Guiño: dos parpadeos rápidos (squash vertical de la cara)
+    hover: {
+      scaleY: [1, 0.35, 1, 0.35, 1],
+      transition: { duration: 0.55, ease: "easeInOut" },
+    },
+  };
+
   return (
     <motion.svg
       viewBox={VIEWBOX}
       className={className}
       role="img"
       aria-label="Logo de Planazo"
-      initial={reduce ? undefined : { scale: 0.6, rotate: -18, opacity: 0 }}
-      animate={
-        reduce
-          ? undefined
-          : {
-              scale: 1,
-              rotate: 0,
-              opacity: 1,
-              transition: { duration: 0.8, ease: EASE_BACK },
-            }
-      }
+      variants={reduce ? undefined : svgVariants}
+      initial={reduce ? undefined : "hidden"}
+      animate={reduce ? undefined : "show"}
+      whileHover={reduce || !interactive ? undefined : "hover"}
+      style={{ ...CENTER, cursor: interactive ? "pointer" : undefined }}
     >
       {/* Flotación continua: sube/baja y oscila apenas (igual que el splash) */}
       <motion.g
-        animate={
-          reduce
-            ? undefined
-            : { y: [0, -22, 0], rotate: [-3, 3, -3] }
-        }
+        animate={reduce ? undefined : { y: [0, -22, 0], rotate: [-3, 3, -3] }}
         transition={{ duration: 4.4, ease: "easeInOut", repeat: Infinity }}
-        style={{ transformOrigin: "center" }}
+        style={CENTER}
       >
         <path fill={starColor} d={STAR_PATH} />
         {!hideFace && (
           <motion.path
             fill={faceColor}
             d={FACE_PATH}
-            initial={reduce ? undefined : { scale: 0, opacity: 0 }}
-            animate={
-              reduce
-                ? undefined
-                : {
-                    scale: 1,
-                    opacity: 1,
-                    transition: { delay: 0.5, duration: 0.5, ease: EASE_BACK },
-                  }
-            }
-            style={{ transformOrigin: "center" }}
+            variants={reduce ? undefined : faceVariants}
+            style={CENTER}
           />
         )}
       </motion.g>

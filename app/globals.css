@@ -88,6 +88,31 @@ body {
   font-family: var(--font-soft);
 }
 
+/* Iconos flotando hacia arriba (eco del FondoFlotante de la app) */
+@keyframes pz-rise {
+  from {
+    transform: translateY(112vh);
+  }
+  to {
+    transform: translateY(-24vh);
+  }
+}
+@keyframes pz-sway {
+  0%,
+  100% {
+    transform: translateX(0) rotate(-8deg);
+  }
+  25% {
+    transform: translateX(12px) rotate(6deg);
+  }
+  50% {
+    transform: translateX(0) rotate(-4deg);
+  }
+  75% {
+    transform: translateX(-12px) rotate(8deg);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

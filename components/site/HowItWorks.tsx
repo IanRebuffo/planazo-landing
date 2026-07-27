@@ -22,8 +22,8 @@ const STEPS = [
 
 export function HowItWorks() {
   return (
-    <section id="como-funciona" className="bg-muted px-5 py-20 sm:px-6 lg:py-28">
-      <div className="mx-auto max-w-6xl">
+    <section id="como-funciona" className="px-5 py-20 sm:px-6 lg:py-28">
+      <div className="mx-auto max-w-6xl rounded-[2.4rem] bg-muted px-6 py-14 sm:px-10 lg:py-20">
         <Reveal className="mx-auto max-w-2xl text-center">
           <span className="font-soft text-sm font-bold uppercase tracking-[0.14em] text-primary-dark">
             Cómo funciona
