@@ -69,6 +69,20 @@ body {
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  /* Ninguna animación/estrella/glow debe generar scroll horizontal */
+  overflow-x: hidden;
+}
+
+/* Los anclajes (#funciones, #negocios…) no quedan tapados por la nav fija */
+[id] {
+  scroll-margin-top: 5.5rem;
+}
+
+/* Nada de medios desbordando el viewport */
+img,
+svg,
+video {
+  max-width: 100%;
 }
 
 ::selection {
