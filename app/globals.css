@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+/* ============================================================
+   Planazo — Design tokens (Tailwind v4 @theme, CSS-first)
+   Marca: Lima #c8ff00 sobre dark. Tipografía: Plus Jakarta Sans.
+   Los tokens quedan disponibles como utilidades: bg-brand, text-fg, etc.
+   ============================================================ */
+@theme {
+  /* Marca */
+  --color-brand: #c8ff00;
+  --color-brand-strong: #b2e600;
+  --color-on-brand: #0a0d02;
+
+  /* Superficies (dark-first) */
+  --color-bg: #0a0b0d;
+  --color-surface: #131519;
+  --color-surface-2: #1b1e24;
+  --color-elevated: #22262d;
+
+  /* Texto */
+  --color-fg: #f4f5f6;
+  --color-fg-muted: #a4abb4;
+  --color-fg-subtle: #6b727c;
+
+  /* Bordes / líneas */
+  --color-line: #262a31;
+  --color-line-strong: #343943;
+
+  /* Estados */
+  --color-danger: #ff5964;
+  --color-success: #4ade80;
+
+  /* Tipografía (se enlaza con next/font en layout.tsx) */
+  --font-sans: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
+
+  /* Radios */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --radius-xl: 32px;
+
+  /* Contenedor */
+  --breakpoint-3xl: 120rem;
+}
+
+:root {
+  color-scheme: dark;
+}
+
+* {
+  border-color: var(--color-line);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-fg);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Selección con el lima de marca */
+::selection {
+  background-color: var(--color-brand);
+  color: var(--color-on-brand);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
