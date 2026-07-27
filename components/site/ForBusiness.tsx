@@ -12,6 +12,7 @@ import {
 import { motion, useReducedMotion } from "motion/react";
 import { Reveal, StaggerGroup, StaggerItem } from "@/components/ui/Reveal";
 import { LogoStar } from "@/components/brand/LogoStar";
+import { useBusinessSignup } from "@/components/business/BusinessSignupProvider";
 
 const BENEFITS = [
   {
@@ -48,20 +49,21 @@ const BENEFITS = [
 
 export function ForBusiness() {
   const reduce = useReducedMotion();
+  const { open } = useBusinessSignup();
 
   return (
     <section
       id="negocios"
-      className="relative overflow-hidden bg-[linear-gradient(160deg,#00b389_0%,#00a87e_45%,#008e6b_100%)] px-5 pb-32 pt-32 text-white sm:px-6 lg:pb-40 lg:pt-40"
+      className="relative overflow-hidden bg-[linear-gradient(160deg,#00b389_0%,#00a87e_45%,#008e6b_100%)] px-5 pb-48 pt-48 text-white sm:px-6 lg:pb-56 lg:pt-56"
     >
-      {/* Fundidos suaves hacia la sección crema (arriba y abajo) */}
+      {/* Fundidos suaves y largos hacia la sección crema (arriba y abajo) */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-x-0 top-0 z-10 h-28 bg-[linear-gradient(to_bottom,var(--color-bg),transparent)]"
+        className="pointer-events-none absolute inset-x-0 top-0 z-10 h-48 bg-[linear-gradient(to_bottom,var(--color-bg)_0%,rgba(247,245,240,0.85)_14%,rgba(247,245,240,0.4)_38%,rgba(247,245,240,0.1)_68%,transparent_100%)]"
       />
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-28 bg-[linear-gradient(to_top,var(--color-bg),transparent)]"
+        className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-48 bg-[linear-gradient(to_top,var(--color-bg)_0%,rgba(247,245,240,0.85)_14%,rgba(247,245,240,0.4)_38%,rgba(247,245,240,0.1)_68%,transparent_100%)]"
       />
 
       {/* Estrella marca de agua */}
@@ -107,16 +109,17 @@ export function ForBusiness() {
         </StaggerGroup>
 
         <Reveal delay={0.1} className="mt-12">
-          <motion.a
-            href="#descargar"
+          <button
+            type="button"
+            onClick={open}
             className="group inline-flex items-center gap-2 rounded-2xl bg-white px-7 py-4 text-base font-bold text-primary-dark shadow-[0_10px_30px_rgba(0,60,45,0.3)] transition-transform duration-200 hover:scale-[1.03] active:scale-[0.98]"
           >
-            Registrá tu negocio gratis
+            Registrá tu local gratis
             <ArrowRight
               size={18}
               className="transition-transform duration-200 group-hover:translate-x-1"
             />
-          </motion.a>
+          </button>
           <p className="mt-3 font-soft text-sm text-white/70">
             Sin costo de alta. Empezás a publicar en minutos.
           </p>

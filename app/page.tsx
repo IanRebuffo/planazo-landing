@@ -1,3 +1,4 @@
+import { BusinessSignupProvider } from "@/components/business/BusinessSignupProvider";
 import { Nav } from "@/components/site/Nav";
 import { Hero } from "@/components/site/Hero";
 import { Features } from "@/components/site/Features";
@@ -8,7 +9,7 @@ import { Footer } from "@/components/site/Footer";
 
 export default function Home() {
   return (
-    <>
+    <BusinessSignupProvider>
       <Nav />
       <main>
         <Hero />
@@ -18,6 +19,6 @@ export default function Home() {
         <DownloadCta />
       </main>
       <Footer />
-    </>
+    </BusinessSignupProvider>
   );
 }

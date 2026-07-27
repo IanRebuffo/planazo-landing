@@ -1,10 +1,10 @@
 "use client";
 
 import { motion, useReducedMotion } from "motion/react";
-import { Apple, Play } from "lucide-react";
 import { LogoStar } from "@/components/brand/LogoStar";
 import { FondoFlotante } from "@/components/app/FondoFlotante";
 import { SpeechBubbles } from "@/components/site/SpeechBubbles";
+import { StoreBadges } from "@/components/site/StoreBadges";
 
 const EASE = [0.23, 1, 0.32, 1] as const;
 
@@ -110,40 +110,16 @@ export function Hero() {
         initial={reduce ? undefined : { opacity: 0, y: 16 }}
         animate={reduce ? undefined : { opacity: 1, y: 0 }}
         transition={{ delay: 1, duration: 0.7, ease: EASE }}
-        className="relative z-10 mt-10 flex flex-wrap items-center justify-center gap-3"
+        className="relative z-10 mt-10"
       >
-        <StoreBadge icon={<Play size={20} />} top="Disponible en" store="Google Play" />
-        <StoreBadge icon={<Apple size={20} />} top="Descargá en" store="App Store" />
+        <StoreBadges />
       </motion.div>
 
-      {/* Transición suave hacia la sección crema */}
+      {/* Transición suave hacia la sección crema (larga y con easing) */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-40 bg-[linear-gradient(to_bottom,transparent,var(--color-bg))]"
+        className="pointer-events-none absolute inset-x-0 bottom-0 z-0 h-72 bg-[linear-gradient(to_bottom,rgba(247,245,240,0)_0%,rgba(247,245,240,0.08)_35%,rgba(247,245,240,0.4)_68%,rgba(247,245,240,0.85)_88%,var(--color-bg)_100%)]"
       />
     </section>
-  );
-}
-
-function StoreBadge({
-  icon,
-  top,
-  store,
-}: {
-  icon: React.ReactNode;
-  top: string;
-  store: string;
-}) {
-  return (
-    <a
-      href="#descargar"
-      className="inline-flex items-center gap-3 rounded-2xl bg-white/95 px-5 py-3 text-fg shadow-[0_8px_24px_rgba(0,60,45,0.2)] backdrop-blur transition-transform duration-200 hover:scale-[1.03]"
-    >
-      <span className="text-primary-dark">{icon}</span>
-      <span className="text-left leading-tight">
-        <span className="block font-soft text-[11px] text-fg-muted">{top}</span>
-        <span className="block text-sm font-semibold">{store}</span>
-      </span>
-    </a>
   );
 }
