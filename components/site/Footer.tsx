@@ -30,14 +30,14 @@ export function Footer() {
   return (
     <footer className="border-t border-line bg-card px-5 py-14 sm:px-6">
       <div className="mx-auto max-w-6xl">
-        <div className="grid gap-10 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
-          <div>
+        <div className="grid gap-10 text-center md:grid-cols-[1.4fr_1fr_1fr_1fr] md:text-left">
+          <div className="flex flex-col items-center md:items-start">
             <Wordmark textColor="var(--color-fg)" />
             <p className="mt-4 max-w-xs font-soft text-sm text-fg-sec">
               Tu próximo plan empieza acá. Descubrí eventos, salí con amigos y
               viví tu ciudad.
             </p>
-            <div className="mt-5 flex gap-2">
+            <div className="mt-5 flex justify-center gap-2 md:justify-start">
               <a
                 href="#"
                 aria-label="Instagram de Planazo"

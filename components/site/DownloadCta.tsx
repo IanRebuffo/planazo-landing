@@ -27,7 +27,6 @@ export function DownloadCta() {
           <div className="relative z-10 flex flex-col items-center">
             <LogoStar
               animated
-              interactive
               starColor="#ffffff"
               faceColor="#00a87e"
               className="h-24 w-24 drop-shadow-[0_12px_28px_rgba(0,70,52,0.4)]"

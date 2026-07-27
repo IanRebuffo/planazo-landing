@@ -1,10 +1,9 @@
 "use client";
 
-import { motion, useReducedMotion } from "motion/react";
+import { motion } from "motion/react";
 import { LogoStar } from "@/components/brand/LogoStar";
 import { FondoFlotante } from "@/components/app/FondoFlotante";
 import { SpeechBubbles } from "@/components/site/SpeechBubbles";
-import { StoreBadges } from "@/components/site/StoreBadges";
 
 const EASE = [0.23, 1, 0.32, 1] as const;
 
@@ -18,8 +17,6 @@ const item = {
 };
 
 export function Hero() {
-  const reduce = useReducedMotion();
-
   return (
     <section
       id="top"
@@ -47,7 +44,6 @@ export function Hero() {
         {/* Estrella protagonista */}
         <LogoStar
           animated
-          interactive
           starColor="#ffffff"
           faceColor="#00c896"
           className="h-40 w-40 drop-shadow-[0_18px_40px_rgba(0,70,52,0.45)] sm:h-52 sm:w-52 lg:h-64 lg:w-64"
@@ -87,34 +83,6 @@ export function Hero() {
             Tengo un negocio
           </a>
         </motion.div>
-
-        <motion.div
-          variants={item}
-          className="mt-7 flex items-center justify-center gap-3 font-soft text-sm text-white/85 sm:mt-8"
-        >
-          <div className="flex shrink-0 -space-x-2">
-            {["#ffd166", "#ffffff", "#2bd9ae", "#ff8a5c"].map((c, i) => (
-              <span
-                key={i}
-                className="h-8 w-8 rounded-full border-2 border-[#00b389]"
-                style={{ background: c }}
-              />
-            ))}
-          </div>
-          <span className="text-left">
-            Miles de personas ya arman sus findes con Planazo
-          </span>
-        </motion.div>
-      </motion.div>
-
-      {/* Badges de tienda */}
-      <motion.div
-        initial={reduce ? undefined : { opacity: 0, y: 16 }}
-        animate={reduce ? undefined : { opacity: 1, y: 0 }}
-        transition={{ delay: 1, duration: 0.7, ease: EASE }}
-        className="relative z-10 mt-8 sm:mt-10"
-      >
-        <StoreBadges />
       </motion.div>
 
       {/* Transición suave hacia la sección crema (larga y con easing) */}
