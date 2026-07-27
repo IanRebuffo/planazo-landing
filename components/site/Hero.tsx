@@ -20,7 +20,7 @@ export function Hero() {
   return (
     <section
       id="top"
-      className="relative flex min-h-[100svh] flex-col items-center justify-center overflow-hidden bg-[linear-gradient(165deg,#2bd9ae_0%,#00c896_46%,#00a87e_100%)] px-5 pb-32 pt-28 text-center text-white sm:px-6 sm:pb-44 sm:pt-32"
+      className="relative flex flex-col items-center overflow-hidden bg-[linear-gradient(165deg,#2bd9ae_0%,#00c896_46%,#00a87e_100%)] px-5 pb-60 pt-28 text-center text-white sm:px-6 sm:pt-36"
     >
       {/* Íconos flotando hacia arriba (universo Planazo) */}
       <FondoFlotante color="#ffffff" />
@@ -88,7 +88,7 @@ export function Hero() {
       {/* Transición suave hacia la sección crema (larga y con easing) */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-x-0 bottom-0 z-0 h-72 bg-[linear-gradient(to_bottom,rgba(247,245,240,0)_0%,rgba(247,245,240,0.08)_35%,rgba(247,245,240,0.4)_68%,rgba(247,245,240,0.85)_88%,var(--color-bg)_100%)]"
+        className="pointer-events-none absolute inset-x-0 bottom-0 z-0 h-60 bg-[linear-gradient(to_bottom,rgba(247,245,240,0)_0%,rgba(247,245,240,0.08)_35%,rgba(247,245,240,0.4)_68%,rgba(247,245,240,0.85)_88%,var(--color-bg)_100%)]"
       />
     </section>
   );

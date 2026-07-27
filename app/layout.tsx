@@ -17,12 +17,12 @@ const nunito = Nunito({
 });
 
 export const metadata: Metadata = {
-  title: "Planazo — Tu próximo plan empieza acá",
+  title: "Planazo - tu próximo plan empieza acá",
   description:
     "Descubrí eventos, salí con amigos y no te pierdas nada de lo que pasa cerca tuyo. Y si tenés un local: publicá eventos, vendé entradas, gestioná reservas y cobrá online.",
   metadataBase: new URL("https://planazoco.ar"),
   openGraph: {
-    title: "Planazo — Tu próximo plan empieza acá",
+    title: "Planazo - tu próximo plan empieza acá",
     description:
       "Descubrí eventos, salí con amigos y no te pierdas nada de lo que pasa cerca tuyo.",
     type: "website",
