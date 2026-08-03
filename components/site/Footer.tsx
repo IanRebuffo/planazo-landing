@@ -46,7 +46,7 @@ export function Footer() {
                 <Instagram size={18} />
               </a>
               <a
-                href="mailto:hola@planazoco.ar"
+                href="mailto:contacto@planazoco.ar"
                 aria-label="Escribinos por mail"
                 className="flex h-10 w-10 items-center justify-center rounded-full border border-line text-fg-sec transition-colors hover:bg-muted hover:text-fg"
               >
