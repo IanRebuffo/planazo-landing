@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "deploy": "next build && wrangler pages deploy out --project-name=planazo-landing --branch=main"
+    "deploy": "next build && npx wrangler pages deploy out --project-name=planazo-landing --branch=main"
   },
   "dependencies": {
     "lucide-react": "^0.469.0",
