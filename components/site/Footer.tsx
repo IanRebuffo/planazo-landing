@@ -1,27 +1,31 @@
 import { Instagram, Mail } from "lucide-react";
 import { Wordmark } from "@/components/brand/Wordmark";
 
+// Las anclas van con "/" adelante porque este footer ya no vive sólo en el home:
+// desde /terminos un "#funciones" pelado no lleva a ninguna parte.
 const COLS = [
   {
     title: "Producto",
     links: [
-      { label: "Funciones", href: "#funciones" },
-      { label: "Cómo funciona", href: "#como-funciona" },
-      { label: "Descargar", href: "#descargar" },
+      { label: "Funciones", href: "/#funciones" },
+      { label: "Cómo funciona", href: "/#como-funciona" },
+      { label: "Descargar", href: "/#descargar" },
     ],
   },
   {
     title: "Negocios",
     links: [
-      { label: "Para negocios", href: "#negocios" },
-      { label: "Registrá tu local", href: "#descargar" },
+      { label: "Para negocios", href: "/#negocios" },
+      { label: "Registrá tu local", href: "/#descargar" },
     ],
   },
   {
     title: "Legal",
     links: [
-      { label: "Términos", href: "#" },
-      { label: "Privacidad", href: "#" },
+      { label: "Términos y condiciones", href: "/terminos/" },
+      // La privacidad hoy es una sección de los Términos, no un documento aparte.
+      { label: "Privacidad", href: "/terminos/#datos-personales" },
+      { label: "Contacto", href: "mailto:contacto@planazoco.ar" },
     ],
   },
 ];
