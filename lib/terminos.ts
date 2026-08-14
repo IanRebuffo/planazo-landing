@@ -9,7 +9,7 @@
 // planazo/constants/terminos.ts. Si tocás uno, copiá el otro.
 
 export const TERMINOS_VERSION = '1.0';
-export const TERMINOS_ACTUALIZADO = '13 de agosto de 2026';
+export const TERMINOS_ACTUALIZADO = '14 de agosto de 2026';
 
 /** URL pública del documento (landing). Se usa para compartirlo fuera de la app. */
 export const TERMINOS_URL = 'https://www.planazoco.ar/terminos/';
@@ -601,7 +601,7 @@ export const TERMINOS: SeccionLegal[] = [
       {
         tipo: 'p',
         texto:
-          '**Eliminación de cuenta:** podés eliminar tu cuenta desde la aplicación o solicitándolo a **soporte@planazoco.ar**. Al hacerlo se eliminan tu perfil, tus reseñas, tus publicaciones y tus datos de actividad. Se conservan, disociados o por obligación legal: los registros de operaciones de pago, las entradas emitidas y las reservas, por el plazo fiscal correspondiente.',
+          '**Eliminación de cuenta:** podés eliminar tu cuenta desde la aplicación (Perfil → Editar perfil → Eliminar mi cuenta) o solicitándolo a **soporte@planazoco.ar**. El borrado es **inmediato y definitivo**, sin período de gracia: se eliminan tu perfil, tus reseñas, publicaciones, comentarios y me gusta, tus entradas compradas y tus reservas, tus medios de pago guardados, tu grafo de seguidores y todos tus datos de actividad. Se conserva únicamente el **registro contable de los pagos** —importes y fechas, sin tu nombre, correo ni datos de tarjeta—, por obligación fiscal y contable. El detalle completo está en **planazoco.ar/eliminar-cuenta**.',
       },
     ],
   },

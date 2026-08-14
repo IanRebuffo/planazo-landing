@@ -25,6 +25,8 @@ const COLS = [
       { label: "Términos y condiciones", href: "/terminos/" },
       // La privacidad hoy es una sección de los Términos, no un documento aparte.
       { label: "Privacidad", href: "/terminos/#datos-personales" },
+      // Google Play exige que este link se pueda encontrar desde el sitio.
+      { label: "Eliminar tu cuenta", href: "/eliminar-cuenta/" },
       { label: "Contacto", href: "mailto:contacto@planazoco.ar" },
     ],
   },
