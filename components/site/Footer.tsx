@@ -24,7 +24,10 @@ const COLS = [
     links: [
       { label: "Términos y condiciones", href: "/terminos/" },
       // La privacidad hoy es una sección de los Términos, no un documento aparte.
-      { label: "Privacidad", href: "/terminos/#datos-personales" },
+      // A la página propia, NO al ancla dentro de los Términos: para Google Play un
+      // enlace que cae en otro documento y obliga a navegar hasta la sección cuenta
+      // como "enlace indirecto", y por eso rechazaron la app.
+      { label: "Privacidad", href: "/privacidad/" },
       // Google Play exige que este link se pueda encontrar desde el sitio.
       { label: "Eliminar tu cuenta", href: "/eliminar-cuenta/" },
       { label: "Contacto", href: "mailto:contacto@planazoco.ar" },
